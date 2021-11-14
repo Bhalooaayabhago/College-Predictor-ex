@@ -297,42 +297,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        maj=new HashSet<>();
-        String sad[]={"Punjab",
-                      "West Bengal",
-                       "Rajasthan",
-                       "Madhya Pradesh",
-                       "Uttar Pradesh",
-                       "Tripura",
-                        "Arunachal Pradesh",
-                        "Kerala",
-                         "Delhi",
-                        "West Bengal",
-                "Goa",
-                "Himachal Pradesh",
-                "Karnataka",
-                "Meghalaya",
-                "Bihar",
-                "Puducherry",
-                "Chattisgarh",
-                "Sikkim",
-                "Andhra Pradesh",
-                "Jharkhand",
-                "Haryana",
-                "Manipur",
-                "Mizoram",
-                "Odisha",
-                "Assam",
-                "Jammu & Kashmir",
-                "Tamil Nadu",
-                "Uttarakhand",
-                "Telangana",
-                "Gujarat",
-                "Maharashtra"};
-        for(String hooo:sad)
-        {
-            maj.add(hooo);
-        }
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -342,36 +306,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.till4).setVisibility(View.INVISIBLE);
         findViewById(R.id.till5).setVisibility(View.INVISIBLE);
         findViewById(R.id.button).setVisibility(View.INVISIBLE);
-        ImageView im = findViewById(R.id.imageView3);
-        ValueAnimator animator = ValueAnimator.ofFloat(400f, 0f);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float fat = (float) animation.getAnimatedValue();
-                im.setY(fat);
-                if (fat == 0) {
-                    findViewById(R.id.till1).setVisibility(View.VISIBLE);
-                    findViewById(R.id.till2).setVisibility(View.VISIBLE);
-                    findViewById(R.id.till3).setVisibility(View.VISIBLE);
-                    findViewById(R.id.till4).setVisibility(View.VISIBLE);
-                    findViewById(R.id.till5).setVisibility(View.VISIBLE);
-                    findViewById(R.id.button).setVisibility(View.VISIBLE);
-                    ValueAnimator vax = ValueAnimator.ofFloat(0.0f, 360.0f);
-                    vax.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                        @Override
-                        public void onAnimationUpdate(ValueAnimator animation) {
-                            float sat = (float) animation.getAnimatedValue();
-                            im.setRotation(sat);
-                        }
-                    });
-                    vax.setDuration(1000);
-                    vax.setRepeatCount(ValueAnimator.INFINITE);
-                    vax.start();
-                }
-            }
-        });
-        animator.setDuration(2000);
-        animator.start();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String kot = jsonfp("pr.json");//college profile
         String hot = jsonfp("ir.json");// nit state map
@@ -407,6 +341,38 @@ public class MainActivity extends AppCompatActivity {
                     editor.commit();//making sure database creation is done only on first boot.
 
         }
+
+
+        ImageView im = findViewById(R.id.imageView3);
+        ValueAnimator animator = ValueAnimator.ofFloat(400f, 0f);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float fat = (float) animation.getAnimatedValue();
+                im.setY(fat);
+                if (fat == 0) {
+                    findViewById(R.id.till1).setVisibility(View.VISIBLE);
+                    findViewById(R.id.till2).setVisibility(View.VISIBLE);
+                    findViewById(R.id.till3).setVisibility(View.VISIBLE);
+                    findViewById(R.id.till4).setVisibility(View.VISIBLE);
+                    findViewById(R.id.till5).setVisibility(View.VISIBLE);
+                    findViewById(R.id.button).setVisibility(View.VISIBLE);
+                    ValueAnimator vax = ValueAnimator.ofFloat(0.0f, 360.0f);
+                    vax.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        @Override
+                        public void onAnimationUpdate(ValueAnimator animation) {
+                            float sat = (float) animation.getAnimatedValue();
+                            im.setRotation(sat);
+                        }
+                    });
+                    vax.setDuration(1000);
+                    vax.setRepeatCount(ValueAnimator.INFINITE);
+                    vax.start();
+                }
+            }
+        });
+        animator.setDuration(2000);
+        animator.start();
         }
 
 
@@ -496,6 +462,42 @@ public class MainActivity extends AppCompatActivity {
 
     public void call(View v)
     {
+        maj=new HashSet<>();
+        String sad[]={"Punjab",
+                "West Bengal",
+                "Rajasthan",
+                "Madhya Pradesh",
+                "Uttar Pradesh",
+                "Tripura",
+                "Arunachal Pradesh",
+                "Kerala",
+                "Delhi",
+                "West Bengal",
+                "Goa",
+                "Himachal Pradesh",
+                "Karnataka",
+                "Meghalaya",
+                "Bihar",
+                "Puducherry",
+                "Chattisgarh",
+                "Sikkim",
+                "Andhra Pradesh",
+                "Jharkhand",
+                "Haryana",
+                "Manipur",
+                "Mizoram",
+                "Odisha",
+                "Assam",
+                "Jammu & Kashmir",
+                "Tamil Nadu",
+                "Uttarakhand",
+                "Telangana",
+                "Gujarat",
+                "Maharashtra"};
+        for(String hooo:sad)
+        {
+            maj.add(hooo);
+        }
         int gadv=0;
         int grank=1000;String gquota="OPEN",ggender="Gender-Neutral",gstate="Uttar Pradesh";
         Set<String> gv=new HashSet<>();
