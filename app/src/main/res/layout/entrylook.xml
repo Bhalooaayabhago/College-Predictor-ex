@@ -9,19 +9,21 @@
 
     <TextView
         android:id="@+id/text_college"
-        android:layout_width="308dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="217dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/text_package"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_branch"
-        android:layout_width="248dp"
-        android:layout_height="55dp"
+        android:layout_width="214dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="36dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,10 +31,11 @@
 
     <TextView
         android:id="@+id/text_package"
-        android:layout_width="85dp"
-        android:layout_height="78dp"
+        android:layout_width="109dp"
+        android:layout_height="74dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toTopOf="@+id/text_rank"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,18 +43,20 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
+        android:background="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_branch" />
 
     <TextView
         android:id="@+id/text_rank"
-        android:layout_width="152dp"
-        android:layout_height="46dp"
+        android:layout_width="108dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="33dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_branch"
-        app:layout_constraintTop_toBottomOf="@+id/text_package" />
+        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintStart_toEndOf="@+id/text_branch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
